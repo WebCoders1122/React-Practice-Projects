@@ -8,6 +8,7 @@ const App = () => {
       {/* <Accordian /> */}
       {/* <RandomColor /> */}
       <StarRating />
+      <StarRating />
     </div>
   );
 };
