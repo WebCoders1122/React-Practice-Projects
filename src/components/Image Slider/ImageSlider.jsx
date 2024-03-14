@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 const ImageSlider = () => {
-  const url = `https://picsum.photos/v2/list?page=1&limit=3`;
+  const url = `https://picsum.photos/v2/list?page=1&limit=10`;
   const [images, setImages] = useState([]); //fetches images
   const [currentImage, setCurrentImage] = useState(0);
   const [imgLoading, setImgLoading] = useState(false);
@@ -70,8 +70,8 @@ const ImageSlider = () => {
                 <button
                   key={image.id + "indicator"}
                   onClick={() => setCurrentImage(index)}
-                  className={`bg-white rounded-full  w-3 h-3 shadow-md shadow-gray-700 ${
-                    currentImage == index ? "relative bottom-1" : "bg-slate-500"
+                  className={`bg-slate-500 rounded-full  w-3 h-3 shadow-md shadow-gray-700 ${
+                    currentImage == index ? "bg-white" : "bg-slate-500"
                   }`}></button>
               );
             })
