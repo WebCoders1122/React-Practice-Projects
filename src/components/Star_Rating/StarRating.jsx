@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 const StarRating = ({ stars = 5 }) => {
+  //step 2: write your code here
   const [hover, setHover] = useState(0);
   const [rating, setRating] = useState(0);
 
@@ -38,3 +39,6 @@ const StarRating = ({ stars = 5 }) => {
 };
 
 export default StarRating;
+
+// step 1: you can make some function here for react-router-dom loader and export it. import in main.jsx and put name of function in loader. return data in "response.json() format"
+//step 2: useLoaderData is hook that will give access to data fetched by loader with your above function. eg: const data = useLoaderData()
