@@ -1,9 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
+import axios from "axios";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 // loadmore slice imports
-import { getProductsAsync, inc_count } from "./loadMoreSlice";
+import {
+  getProductsAsync,
+  inc_count,
+  initialLoaderAsync,
+} from "./loadMoreSlice";
 const LoadMoreButton = () => {
   //redux states
   const products = useSelector((state) => state.loadMore.products);
@@ -12,9 +17,8 @@ const LoadMoreButton = () => {
   //redux dispatch
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getProductsAsync(count));
+    if (count !== 0) dispatch(getProductsAsync(count));
   }, [count]);
-  console.log(products);
   return (
     <div className='container flex flex-col justify-center'>
       <div className='min-h-screen bg-gray-100 flex flex-col justify-center'>
@@ -75,3 +79,7 @@ const LoadMoreButton = () => {
 };
 
 export default LoadMoreButton;
+
+export const initialLoading = (dispatch) => {
+  dispatch(initialLoaderAsync());
+};

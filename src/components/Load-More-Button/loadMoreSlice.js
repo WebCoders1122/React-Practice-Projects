@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 //api imports
-import { getProducts } from "./loadMoreAPI";
+import { getProducts, initialLoader } from "./loadMoreAPI";
 
 //initial state
 const initialState = {
@@ -14,6 +14,15 @@ export const getProductsAsync = createAsyncThunk(
   "loadMore/fetchProducts",
   async (count) => {
     const response = await getProducts(count);
+    return response.data;
+  }
+);
+
+//for initial loading via react-router-dom loader
+export const initialLoaderAsync = createAsyncThunk(
+  "loadMore/initialLoading",
+  async () => {
+    const response = await initialLoader();
     return response.data;
   }
 );
@@ -54,6 +63,11 @@ const loadMoreSlice = createSlice({
           state.disableButton = false;
         }
         console.log(state.disableButton);
+      })
+      .addCase(initialLoaderAsync.fulfilled, (state, action) => {
+        // this is for 1st loading via react router dom
+        state.status = "idle";
+        state.products = [...state.products, ...action.payload.products];
       });
   },
 });

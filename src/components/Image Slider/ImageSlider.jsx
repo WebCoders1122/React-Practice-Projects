@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { useLoaderData } from "react-router-dom";
 
 const ImageSlider = () => {
-  const url = `https://picsum.photos/v2/list?page=1&limit=10`;
   const [images, setImages] = useState([]); //fetches images
   const [currentImage, setCurrentImage] = useState(0);
   const [imgLoading, setImgLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  let data = useLoaderData();
 
   // handlers
   const leftBtnHandler = () => {
@@ -21,15 +23,11 @@ const ImageSlider = () => {
   };
 
   useEffect(() => {
-    async function fetchImages() {
-      setImgLoading(true);
-      let response = await fetch(url);
-      let data = await response.json();
-      setImages(data);
-      setImgLoading(false);
-    }
-    fetchImages();
-  }, [url]);
+    setImgLoading(true);
+
+    setImages(data);
+    setImgLoading(false);
+  }, []);
   return (
     <div className='slider_container relative w-[500px] m-2 h-[333px]'>
       {imgLoading ? (
@@ -82,3 +80,9 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
+
+export const imageSliderLoader = async () => {
+  const url = `https://picsum.photos/v2/list?page=1&limit=10`;
+  let response = await fetch(url);
+  return response.json();
+};
