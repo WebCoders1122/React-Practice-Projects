@@ -19,7 +19,10 @@ import {
 import ReactRouterWeb from "./components/React Router Web/ReactRouterWeb.jsx";
 import Layout from "./Layout.jsx";
 import StarRating from "./components/Star_Rating/StarRating.jsx";
-
+import Accordian from "./components/Accordion/Accordian.jsx";
+import ImageSlider from "./components/Image Slider/ImageSlider.jsx";
+import LoadMoreButton from "./components/Load-More-Button/LoadMoreButton.jsx";
+import RandomColor from "./components/Random Color Generator/RandomColor.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -45,8 +48,20 @@ const router = createBrowserRouter(
       path='/'
       element={<Layout />}>
       <Route
-        path='react-router-web'
-        element={<ReactRouterWeb />}
+        path='accordian'
+        element={<Accordian />}
+      />
+      <Route
+        path='image-slider'
+        element={<ImageSlider />}
+      />
+      <Route
+        path='product-loader'
+        element={<LoadMoreButton />}
+      />
+      <Route
+        path='random-color-generator'
+        element={<RandomColor />}
       />
       <Route
         // loader={api call or imported api function} => this will load or fetch data when you hover on the link of this element

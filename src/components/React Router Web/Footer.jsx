@@ -36,7 +36,7 @@ const Footer = () => {
             </a>
             <a
               className='my-3 block'
-              href='/#'>
+              href='/star-rating'>
               Star Rating
             </a>
             <a
