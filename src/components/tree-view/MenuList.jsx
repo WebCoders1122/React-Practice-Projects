@@ -2,9 +2,8 @@ import React from "react";
 import MenuItem from "./MenuItem";
 
 const MenuList = ({ data }) => {
-  console.log(data);
   return (
-    <ul className='inline-block list-disc m-3'>
+    <ul className=''>
       {data && data.length
         ? data.map((navItem, index) => {
             return (
