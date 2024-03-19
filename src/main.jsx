@@ -6,6 +6,7 @@ import "./index.css";
 //redux
 import { Provider } from "react-redux";
 import { store } from "./app/store.js";
+import { useDispatch } from "react-redux";
 
 //router
 import {
@@ -20,16 +21,14 @@ import ReactRouterWeb from "./components/React Router Web/ReactRouterWeb.jsx";
 import Layout from "./Layout.jsx";
 import StarRating from "./components/Star_Rating/StarRating.jsx";
 import Accordian from "./components/Accordion/Accordian.jsx";
-import ImageSlider from "./components/Image Slider/ImageSlider.jsx";
+import ImageSlider, {
+  imageSliderLoader,
+} from "./components/Image Slider/ImageSlider.jsx";
 import LoadMoreButton, {
   initialLoading,
 } from "./components/Load-More-Button/LoadMoreButton.jsx";
 import RandomColor from "./components/Random Color Generator/RandomColor.jsx";
-
-//data loader for components
-import { imageSliderLoader } from "./components/Image Slider/ImageSlider.jsx";
-import { useDispatch } from "react-redux";
-import { initialLoaderAsync } from "./components/Load-More-Button/loadMoreSlice.js";
+import TreeView from "./components/tree-view/TreeView.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -79,6 +78,10 @@ function Index() {
           path='star-rating'
           element={<StarRating />}
         />
+        <Route
+          path='tree-view'
+          element={<TreeView />}
+        />
       </Route>
     )
   );
@@ -86,11 +89,9 @@ function Index() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <Provider store={store}>
-    {/* <App /> */}
-    {/* <RouterProvider router={router} /> */}
-    <Index />
-  </Provider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <Index />
+    </Provider>
+  </React.StrictMode>
 );

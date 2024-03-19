@@ -16,6 +16,7 @@ const Navbar = () => {
     { id: 3, text: "Image Slider", url: "image-slider" },
     { id: 4, text: "Product Loader", url: "product-loader" },
     { id: 5, text: "Random Color", url: "random-color-generator" },
+    { id: 6, text: "Tree View", url: "tree-view" },
   ];
   return (
     <nav className='bg-white border-gray-200 py-2.5 dark:bg-gray-900'>
