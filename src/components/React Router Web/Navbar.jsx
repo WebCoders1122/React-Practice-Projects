@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { toggleMode } from "../../app/darkMode/darkModeSlice";
 
 const Navbar = () => {
+  //redux
+  const darkMode = useSelector((state) => state.darkMode.mode);
+  const dispatch = useDispatch();
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
   // Toggle function to handle the navbar's display
   const handleNav = () => {
     setNav(!nav);
   };
+
   // Array containing navigation items
   const navItems = [
     { id: 1, text: "Home", url: "/" },
@@ -19,14 +26,20 @@ const Navbar = () => {
     { id: 6, text: "Tree View", url: "tree-view" },
   ];
   return (
-    <nav className='bg-white border-gray-200 py-2.5 dark:bg-gray-900'>
+    <nav
+      className={`bg-white border-gray-200 py-2.5 ${
+        darkMode && "bg-gray-900"
+      }`}>
       {/* main div */}
-      <div className='flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto'>
+      <div className='flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto '>
         {/* This a tag is for logo */}
         <Link
           to='/'
           className='flex items-center'>
-          <span className='self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
+          <span
+            className={`self-center text-xl text-purple-800 font-bold whitespace-nowrap ${
+              darkMode && "dark:text-white"
+            }`}>
             Web Coders
           </span>
         </Link>
@@ -36,14 +49,27 @@ const Navbar = () => {
           </div>
           {/* sign in button */}
           <div className='flex gap-2'>
+            <button
+              className='bg-purple-700 text-white'
+              onClick={() => dispatch(toggleMode())}>
+              toggle
+            </button>
             <Link
               href='#'
-              className='text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800'>
+              className={`text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ${
+                darkMode &&
+                "dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none focus:ring-purple-800"
+              }`}>
               Sign In
             </Link>
             <Link
               href='#'
-              className='text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800'>
+              className={`text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0" +
+                  ${
+                    darkMode &&
+                    "dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-gray-800"
+                  }
+              `}>
               Register
             </Link>
           </div>
@@ -74,17 +100,15 @@ const Navbar = () => {
           </ul>
         </div>
         {/* this is for links */}
-        <div
-          className='items-center justify-between w-full lg:flex lg:w-auto lg:order-1'
-          id='mobile-menu-2'>
-          <ul className='hidden lg:flex mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0'>
+        <div className='items-center justify-between w-full lg:flex lg:w-auto lg:order-1'>
+          <ul className='hidden lg:flex mt-4 font-medium lg:flex-row lg:space-x-5 lg:mt-0'>
             {navItems.map((item) => {
               return (
                 <li key={item.id}>
                   <NavLink
                     to={item.url}
-                    className='block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white'
-                    aria-current='page'>
+                    className={`block py-2 pl-3 pr-4 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 "
+                       ${darkMode && "dark:text-white"}`}>
                     {item.text}
                   </NavLink>
                 </li>
