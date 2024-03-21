@@ -15,7 +15,7 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-
+  console.log(window.matchMedia("(prefers-color-scheme: dark)"));
   // Array containing navigation items
   const navItems = [
     { id: 1, text: "Home", url: "/" },
@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav
       className={`bg-white border-gray-200 py-2.5 ${
-        darkMode && "bg-gray-900"
+        darkMode && "dark:bg-gray-900"
       }`}>
       {/* main div */}
       <div className='flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto '>
@@ -77,14 +77,17 @@ const Navbar = () => {
           {/* Mobile Navigation Icon */}
           <div
             onClick={handleNav}
-            className='block lg:hidden text-white mx-5 '>
+            className={`block lg:hidden mx-5 text-violet-700 ${
+              darkMode && "dark:text-white"
+            }`}>
             {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
           </div>
           {/* mobile navigation items */}
           <ul
             className={
               nav
-                ? "fixed lg:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-20"
+                ? `fixed lg:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-500 bg-white ease-in-out duration-500 z-20
+                    ${darkMode && "dark:bg-[#000300]"}`
                 : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-20"
             }>
             {navItems.map((item) => (
