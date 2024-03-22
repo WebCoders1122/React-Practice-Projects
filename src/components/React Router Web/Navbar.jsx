@@ -15,7 +15,7 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-  console.log(window.matchMedia("(prefers-color-scheme: dark)"));
+  // console.log(window.matchMedia("(prefers-color-scheme: dark)"));
   // Array containing navigation items
   const navItems = [
     { id: 1, text: "Home", url: "/" },
@@ -24,6 +24,7 @@ const Navbar = () => {
     { id: 4, text: "Product Loader", url: "product-loader" },
     { id: 5, text: "Random Color", url: "random-color-generator" },
     { id: 6, text: "Tree View", url: "tree-view" },
+    { id: 7, text: "QR Code", url: "qr-code" },
   ];
   return (
     <nav

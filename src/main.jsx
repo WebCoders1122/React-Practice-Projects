@@ -29,6 +29,7 @@ import LoadMoreButton, {
 } from "./components/Load-More-Button/LoadMoreButton.jsx";
 import RandomColor from "./components/Random Color Generator/RandomColor.jsx";
 import TreeView from "./components/tree-view/TreeView.jsx";
+import QR_Code from "./components/QR Code/QRCode.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -81,6 +82,10 @@ function Index() {
         <Route
           path='tree-view'
           element={<TreeView />}
+        />
+        <Route
+          path='qr-code'
+          element={<QR_Code />}
         />
       </Route>
     )
