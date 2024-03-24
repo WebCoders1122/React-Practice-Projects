@@ -14,14 +14,14 @@ const QR_Code = () => {
       <h2 className='text-xl font-bold text-violet-800 sm:text-3xl text-center'>
         Generate QR code By Value
       </h2>
-      <div className='input_section my-2 flex gap-1 justify-center items-center w-screen my-3'>
+      <div className='input_section flex flex-col gap-1 justify-center items-center md:flex-row w-screen my-3'>
         <label
           htmlFor='text-field'
-          className='relative block rounded-md border border-gray-200 shadow-sm focus-within:border-violet-700 focus-within:ring-1 focus-within:ring-violet-700  w-1/3'>
+          className='relative block rounded-md border border-gray-200 shadow-sm focus-within:border-violet-700 focus-within:ring-1 my-2 mx-1 focus-within:ring-violet-700 w-[90%] md:w-1/3'>
           <input
             type='text'
             id='text-field'
-            className='peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 p-2'
+            className='peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 p-3'
             placeholder='text-field'
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -31,7 +31,7 @@ const QR_Code = () => {
           </span>
         </label>
         <button
-          className='inline-block rounded bg-violet-700 px-8 py-2.5 text-normal font-semibold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-violet-700'
+          className='inline-block rounded bg-violet-700 px-8 py-3 text-normal font-semibold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-violet-700 w-[90%] md:w-auto'
           onClick={handleQrCode}>
           Generate
         </button>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -55,10 +56,16 @@ const Footer = () => {
               href='/#'>
               GitHub Link
             </a>
+
+            <Link
+              to='experiment'
+              className='my-3 block'>
+              Experiment
+            </Link>
             <a
-              className='my-3 block'
+              className='my-3 block '
               href='/#'>
-              contact@webcoders1122@gmail.com
+              Contact: webcoders1122@gmail.com
               <span className='text-teal-600 text-xs p-1'>Email</span>
             </a>
           </div>
