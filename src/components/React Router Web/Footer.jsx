@@ -62,6 +62,11 @@ const Footer = () => {
               className='my-3 block'>
               Experiment
             </Link>
+            <Link
+              to='scroll-indicator'
+              className='my-3 block'>
+              Scroll Indicator
+            </Link>
             <a
               className='my-3 block '
               href='/#'>

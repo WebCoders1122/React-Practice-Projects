@@ -31,6 +31,9 @@ import RandomColor from "./components/Random Color Generator/RandomColor.jsx";
 import TreeView from "./components/tree-view/TreeView.jsx";
 import QR_Code from "./components/QR Code/QRCode.jsx";
 import Experiment from "./components/Experiments/Experiment.jsx";
+import Scroll_Indicator, {
+  Scroll_Indicator_loader,
+} from "./components/Scroll_Indicator/Scroll_Indicator.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -91,6 +94,11 @@ function Index() {
         <Route
           path='experiment'
           element={<Experiment />}
+        />
+        <Route
+          loader={Scroll_Indicator_loader}
+          path='scroll-indicator'
+          element={<Scroll_Indicator />}
         />
       </Route>
     )
