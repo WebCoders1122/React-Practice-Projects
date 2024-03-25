@@ -34,6 +34,7 @@ import Experiment from "./components/Experiments/Experiment.jsx";
 import Scroll_Indicator, {
   Scroll_Indicator_loader,
 } from "./components/Scroll_Indicator/Scroll_Indicator.jsx";
+import CustomTabs from "./components/custom-tabs/CustomTabs.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -77,6 +78,10 @@ function Index() {
         <Route
           path='random-color-generator'
           element={<RandomColor />}
+        />
+        <Route
+          path='custom-tabs'
+          element={<CustomTabs />}
         />
         <Route
           // loader={api call or imported api function} => this will load or fetch data when you hover on the link of this element

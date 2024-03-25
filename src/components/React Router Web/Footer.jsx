@@ -67,6 +67,11 @@ const Footer = () => {
               className='my-3 block'>
               Scroll Indicator
             </Link>
+            <Link
+              to='custom-tabs'
+              className='my-3 block'>
+              Custom Tabs
+            </Link>
             <a
               className='my-3 block '
               href='/#'>

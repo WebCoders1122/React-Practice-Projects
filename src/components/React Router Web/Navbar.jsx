@@ -28,7 +28,7 @@ const Navbar = () => {
   ];
   return (
     <nav
-      className={`bg-white border-gray-200 py-2.5 ${
+      className={`bg-white border-gray-200 py-2.5 relative w-full ${
         darkMode && "dark:bg-gray-900"
       }`}>
       {/* main div */}
