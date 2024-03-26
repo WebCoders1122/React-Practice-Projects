@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { toggleMode } from "../../app/darkMode/darkModeSlice";
+import MyButton from "../Reuseable Components/MyButton";
 
 const Navbar = () => {
   //redux
@@ -56,29 +57,22 @@ const Navbar = () => {
             {/* <span className='text-white'>hello</span> */}
           </div>
           {/* sign in button */}
-          <div className='flex gap-2'>
-            <button
-              className='bg-purple-700 text-white'
-              onClick={() => dispatch(toggleMode())}>
-              toggle
-            </button>
-            <Link
-              href='#'
-              className={`text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ${
-                darkMode &&
-                "dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none focus:ring-purple-800"
-              }`}>
-              Sign In
+          <div className='flex gap-1'>
+            <Link>
+              <MyButton
+                text='Toggle'
+                color='violet'
+                onClick={() => dispatch(toggleMode())}
+              />
             </Link>
-            <Link
-              href='#'
-              className={`text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0" +
-                  ${
-                    darkMode &&
-                    "dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-gray-800"
-                  }
-              `}>
-              Register
+            <Link href='#'>
+              <MyButton text='Sign In' />
+            </Link>
+            <Link href='#'>
+              <MyButton
+                text='Register'
+                color='dark'
+              />
             </Link>
             <div>
               {/* DropDown menu main button */}
@@ -86,10 +80,15 @@ const Navbar = () => {
                 id='dropdownDefaultButton'
                 data-dropdown-toggle='dropdown'
                 onClick={() => setExpand(!expand)}
-                className={`text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-semibold rounded-lg px-5 py-2.5 text-center inline-flex items-center ${
-                  darkMode &&
-                  "dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
-                }`}
+                className={`flex text-white font-semibold bg-gradient-to-r ${
+                  !darkMode
+                    ? "from-violet-400 via-violet-600 to-violet-700"
+                    : "from-gray-400 via-gray-600 to-gray-700"
+                } hover:bg-gradient-to-br focus:ring-4 focus:outline-none ${
+                  !darkMode
+                    ? "focus:ring-violet-400 dark:focus:ring-violet-900"
+                    : "focus:ring-gray-400 dark:focus:ring-gray-900"
+                } rounded-lg text-sm px-5 py-2 text-center me-2`}
                 type='button'>
                 Small Components &nbsp;
                 {expand ? (
