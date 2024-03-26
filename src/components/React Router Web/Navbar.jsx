@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+import "flowbite";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import {
+  IoIosArrowDropupCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
@@ -15,6 +20,8 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+  //for dropdowns
+  const [expand, setExpand] = useState(false);
   // console.log(window.matchMedia("(prefers-color-scheme: dark)"));
   // Array containing navigation items
   const navItems = [
@@ -73,6 +80,51 @@ const Navbar = () => {
               `}>
               Register
             </Link>
+            <div>
+              {/* DropDown menu main button */}
+              <button
+                id='dropdownDefaultButton'
+                data-dropdown-toggle='dropdown'
+                onClick={() => setExpand(!expand)}
+                className={`text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-semibold rounded-lg px-5 py-2.5 text-center inline-flex items-center ${
+                  darkMode &&
+                  "dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+                }`}
+                type='button'>
+                Small Components &nbsp;
+                {expand ? (
+                  <IoIosArrowDropupCircle size={20} />
+                ) : (
+                  <IoIosArrowDroprightCircle size={20} />
+                )}
+              </button>
+              {/* Dropdown menu */}
+              <div
+                id='dropdown'
+                className={`z-10 ${
+                  expand ? null : "hidden"
+                } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ${
+                  darkMode && "dark:bg-gray-700"
+                } `}>
+                <ul
+                  className={`py-2 text-sm text-gray-700 ${
+                    darkMode && "dark:text-gray-200"
+                  }`}
+                  aria-labelledby='dropdownDefaultButton'>
+                  <li>
+                    <Link
+                      to='custom-tabs'
+                      onClick={() => setExpand(!expand)}
+                      className={`block px-4 py-2 hover:bg-gray-100 ${
+                        darkMode &&
+                        "dark:hover:bg-gray-600 dark:hover:text-white"
+                      }`}>
+                      Custom Tabs
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           {/* mobile menu */}
           {/* Mobile Navigation Icon */}
