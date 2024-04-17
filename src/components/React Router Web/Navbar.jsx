@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "flowbite";
+import { initFlowbite } from "flowbite/lib/esm";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import {
   IoIosArrowDropupCircle,
@@ -10,8 +11,12 @@ import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { toggleMode } from "../../app/darkMode/darkModeSlice";
 import MyButton from "../Reuseable Components/MyButton";
+import { useEffect } from "react";
 
 const Navbar = () => {
+  useEffect(() => {
+    initFlowbite();
+  }, []);
   //redux
   const darkMode = useSelector((state) => state.darkMode.mode);
   const dispatch = useDispatch();
@@ -27,12 +32,15 @@ const Navbar = () => {
   // Array containing navigation items
   const navItems = [
     { id: 1, text: "Home", url: "/" },
-    { id: 2, text: "Accordian", url: "accordian" },
     { id: 3, text: "Image Slider", url: "image-slider" },
     { id: 4, text: "Product Loader", url: "product-loader" },
+  ];
+  const dropDownItems = [
+    { id: 2, text: "Accordian", url: "accordian" },
     { id: 5, text: "Random Color", url: "random-color-generator" },
     { id: 6, text: "Tree View", url: "tree-view" },
     { id: 7, text: "QR Code", url: "qr-code" },
+    { id: 8, text: "Custom Tabs", url: "custom-tabs" },
   ];
   return (
     <nav
@@ -110,17 +118,23 @@ const Navbar = () => {
                     darkMode && "dark:text-gray-200"
                   }`}
                   aria-labelledby='dropdownDefaultButton'>
-                  <li>
-                    <Link
-                      to='custom-tabs'
-                      onClick={() => setExpand(!expand)}
-                      className={`block px-4 py-2 hover:bg-gray-100 ${
-                        darkMode &&
-                        "dark:hover:bg-gray-600 dark:hover:text-white"
-                      }`}>
-                      Custom Tabs
-                    </Link>
-                  </li>
+                  {dropDownItems
+                    ? dropDownItems.map((navItem) => {
+                        return (
+                          <li key={navItem.id}>
+                            <Link
+                              to={navItem.url}
+                              onClick={() => setExpand(!expand)}
+                              className={`block px-4 py-2 hover:bg-gray-100 ${
+                                darkMode &&
+                                "dark:hover:bg-gray-600 dark:hover:text-white"
+                              }`}>
+                              {navItem.text}
+                            </Link>
+                          </li>
+                        );
+                      })
+                    : null}
                 </ul>
               </div>
             </div>
