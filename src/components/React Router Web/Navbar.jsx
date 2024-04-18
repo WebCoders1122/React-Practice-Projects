@@ -41,6 +41,7 @@ const Navbar = () => {
     { id: 6, text: "Tree View", url: "tree-view" },
     { id: 7, text: "QR Code", url: "qr-code" },
     { id: 8, text: "Custom Tabs", url: "custom-tabs" },
+    { id: 9, text: "Custom Pop Up", url: "custom-popup" },
   ];
   return (
     <nav

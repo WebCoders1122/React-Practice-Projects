@@ -35,6 +35,7 @@ import Scroll_Indicator, {
   Scroll_Indicator_loader,
 } from "./components/Scroll_Indicator/Scroll_Indicator.jsx";
 import CustomTabs from "./components/custom-tabs/CustomTabs.jsx";
+import CustomPopUp from "./components/custom-popup/CustomPopUp.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -104,6 +105,10 @@ function Index() {
           loader={Scroll_Indicator_loader}
           path='scroll-indicator'
           element={<Scroll_Indicator />}
+        />
+        <Route
+          path='custom-popup'
+          element={<CustomPopUp />}
         />
       </Route>
     )
