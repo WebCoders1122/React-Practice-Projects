@@ -13,6 +13,9 @@ import { toggleMode } from "../../app/darkMode/darkModeSlice";
 import MyButton from "../Reuseable Components/MyButton";
 import { useEffect } from "react";
 
+//react icons for dark and light mode
+import { CiDark, CiLight } from "react-icons/ci";
+
 const Navbar = () => {
   useEffect(() => {
     initFlowbite();
@@ -67,13 +70,12 @@ const Navbar = () => {
           </div>
           {/* sign in button */}
           <div className='flex gap-1'>
-            <Link>
-              <MyButton
-                text='Toggle'
-                color='violet'
-                onClick={() => dispatch(toggleMode())}
-              />
-            </Link>
+            {/* dark mode toggler */}
+            <button
+              className='text-2xl bg-gray-200 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 ease-linear duration-200'
+              onClick={() => dispatch(toggleMode())}>
+              {darkMode ? <CiLight /> : <CiDark />}
+            </button>
             <Link href='#'>
               <MyButton text='Sign In' />
             </Link>

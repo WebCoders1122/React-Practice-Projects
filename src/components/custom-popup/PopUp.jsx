@@ -7,8 +7,8 @@ const PopUp = ({ header, footer, body }) => {
       {header ? (
         header
       ) : (
-        <div className='flex items-center justify-center gap-2 p-4 md:p-5 border-b rounded-t dark:border-gray-600'>
-          <h3 className='text-xl font-semibold text-gray-900 dark:text-white'>
+        <div className='flex items-center justify-center gap-2 p-4 md:p-5 border-b rounded-t bg-violet-700 dark:bg-gray-600 dark:border-gray-600'>
+          <h3 className='text-xl font-semibold text-white dark:text-white'>
             Sample Header
           </h3>
           <button
@@ -34,7 +34,7 @@ const PopUp = ({ header, footer, body }) => {
       {footer ? (
         footer
       ) : (
-        <div className='flex items-center justify-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 text-white'>
+        <div className='flex items-center justify-center p-4 md:p-5 border-t border-gray-200 rounded-b bg-violet-500 dark:bg-gray-500 dark:border-gray-600 text-white'>
           <p className='font-bold'>Sample Footer</p>
         </div>
       )}
