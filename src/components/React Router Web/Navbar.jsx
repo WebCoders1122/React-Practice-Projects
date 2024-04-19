@@ -29,6 +29,14 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+
+  // to handle darkmode
+  const handleDarkMode = () => {
+    dispatch(toggleMode());
+    darkMode
+      ? document.documentElement.classList.remove("dark")
+      : document.documentElement.classList.add("dark");
+  };
   //for dropdowns
   const [expand, setExpand] = useState(false);
   // console.log(window.matchMedia("(prefers-color-scheme: dark)"));
@@ -48,9 +56,9 @@ const Navbar = () => {
   ];
   return (
     <nav
-      className={`bg-white border-gray-200 py-2.5 relative w-full ${
-        darkMode && "dark:bg-gray-900"
-      }`}>
+      className={
+        "bg-white border-gray-200 py-2.5 relative w-full dark:bg-gray-900 ease-linear duration-200"
+      }>
       {/* main div */}
       <div className='flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto '>
         {/* This a tag is for logo */}
@@ -58,9 +66,7 @@ const Navbar = () => {
           to='/'
           className='flex items-center'>
           <span
-            className={`self-center text-xl text-purple-800 font-bold whitespace-nowrap ${
-              darkMode && "dark:text-white"
-            }`}>
+            className={`self-center text-xl text-purple-800 font-bold whitespace-nowrap dark:text-white`}>
             Web Coders
           </span>
         </Link>
@@ -72,8 +78,8 @@ const Navbar = () => {
           <div className='flex gap-1'>
             {/* dark mode toggler */}
             <button
-              className='text-2xl bg-gray-200 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 ease-linear duration-200'
-              onClick={() => dispatch(toggleMode())}>
+              className='text-2xl bg-gray-200 dark:bg-gray-800 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 hover:dark:bg-gray-700 dark:text-white ease-linear duration-200'
+              onClick={handleDarkMode}>
               {darkMode ? <CiLight /> : <CiDark />}
             </button>
             <Link href='#'>
@@ -91,15 +97,8 @@ const Navbar = () => {
                 id='dropdownDefaultButton'
                 data-dropdown-toggle='dropdown'
                 onClick={() => setExpand(!expand)}
-                className={`flex text-white font-semibold bg-gradient-to-r ${
-                  !darkMode
-                    ? "from-violet-400 via-violet-600 to-violet-700"
-                    : "from-gray-400 via-gray-600 to-gray-700"
-                } hover:bg-gradient-to-br focus:ring-4 focus:outline-none ${
-                  !darkMode
-                    ? "focus:ring-violet-400 dark:focus:ring-violet-900"
-                    : "focus:ring-gray-400 dark:focus:ring-gray-900"
-                } rounded-lg text-sm px-5 py-2 text-center me-2`}
+                className={`flex text-white font-semibold bg-gradient-to-r from-violet-400 via-violet-600 to-violet-700 dark:from-gray-400 dark:via-gray-600 dark:to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-violet-400 dark:focus:ring-gray-400
+                rounded-lg text-sm px-5 py-2 text-center me-2`}
                 type='button'>
                 Small Components &nbsp;
                 {expand ? (
@@ -113,13 +112,10 @@ const Navbar = () => {
                 id='dropdown'
                 className={`z-10 ${
                   expand ? null : "hidden"
-                } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ${
-                  darkMode && "dark:bg-gray-700"
-                } `}>
+                } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
                 <ul
-                  className={`py-2 text-sm text-gray-700 ${
-                    darkMode && "dark:text-gray-200"
-                  }`}
+                  className={`py-2 text-sm text-gray-700 dark:text-gray-200"
+                  `}
                   aria-labelledby='dropdownDefaultButton'>
                   {dropDownItems
                     ? dropDownItems.map((navItem) => {
@@ -128,10 +124,8 @@ const Navbar = () => {
                             <Link
                               to={navItem.url}
                               onClick={() => setExpand(!expand)}
-                              className={`block px-4 py-2 hover:bg-gray-100 ${
-                                darkMode &&
-                                "dark:hover:bg-gray-600 dark:hover:text-white"
-                              }`}>
+                              className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white
+                              `}>
                               {navItem.text}
                             </Link>
                           </li>
@@ -146,9 +140,7 @@ const Navbar = () => {
           {/* Mobile Navigation Icon */}
           <div
             onClick={handleNav}
-            className={`block lg:hidden mx-5 text-violet-700 ${
-              darkMode && "dark:text-white"
-            }`}>
+            className={`block lg:hidden mx-5 text-violet-700 dark:text-white`}>
             {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
           </div>
           {/* mobile navigation items */}
@@ -156,7 +148,7 @@ const Navbar = () => {
             className={
               nav
                 ? `fixed lg:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-500 bg-white ease-in-out duration-500 z-20
-                    ${darkMode && "dark:bg-[#000300]"}`
+                    dark:bg-[#000300]`
                 : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-20"
             }>
             {navItems.map((item) => (
@@ -180,7 +172,7 @@ const Navbar = () => {
                   <NavLink
                     to={item.url}
                     className={`block py-2 pl-3 pr-4 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 "
-                       ${darkMode && "dark:text-white"}`}>
+                       dark:text-white`}>
                     {item.text}
                   </NavLink>
                 </li>
