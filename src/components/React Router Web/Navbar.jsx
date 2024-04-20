@@ -32,11 +32,16 @@ const Navbar = () => {
 
   // to handle darkmode
   const handleDarkMode = () => {
-    dispatch(toggleMode());
-    darkMode
-      ? document.documentElement.classList.remove("dark")
-      : document.documentElement.classList.add("dark");
+    darkMode == true ||
+    (darkMode == null &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
   };
+  useEffect(() => {
+    handleDarkMode();
+  }, [darkMode]);
+
   //for dropdowns
   const [expand, setExpand] = useState(false);
   // console.log(window.matchMedia("(prefers-color-scheme: dark)"));
@@ -77,11 +82,23 @@ const Navbar = () => {
           {/* sign in button */}
           <div className='flex gap-1'>
             {/* dark mode toggler */}
-            <button
-              className='text-2xl bg-gray-200 dark:bg-gray-800 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 hover:dark:bg-gray-700 dark:text-white ease-linear duration-200'
-              onClick={handleDarkMode}>
-              {darkMode ? <CiLight /> : <CiDark />}
-            </button>
+            {darkMode == true ||
+            (darkMode == null &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches) ? (
+              <button
+                className='text-2xl bg-gray-200 dark:bg-gray-800 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 hover:dark:bg-gray-700 dark:text-white ease-linear duration-200'
+                onClick={() => dispatch(toggleMode(false))}>
+                <CiLight />
+                {/* <CiDark /> */}
+              </button>
+            ) : (
+              <button
+                className='text-2xl bg-gray-200 dark:bg-gray-800 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 hover:dark:bg-gray-700 dark:text-white ease-linear duration-200'
+                onClick={() => dispatch(toggleMode(true))}>
+                <CiDark />
+                {/* <CiLight /> */}
+              </button>
+            )}
             <Link href='#'>
               <MyButton text='Sign In' />
             </Link>
