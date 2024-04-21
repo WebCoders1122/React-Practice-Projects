@@ -32,7 +32,7 @@ const QR_Code = () => {
         </div>
 
         <button
-          className='inline-block rounded bg-violet-700 dark:bg-gray-600 px-8 py-3 text-normal font-semibold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:dark:bg-gray-600 active:bg-violet-700 w-[90%] md:w-auto ease-linear duration-200'
+          className='inline-block rounded bg-violet-700 dark:bg-gray-600 px-8 py-3 text-normal font-semibold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring hover:dark:bg-violet-700 active:dark:bg-gray-600 active:bg-violet-700 w-[90%] md:w-auto ease-linear duration-200'
           onClick={handleQrCode}>
           Generate
         </button>

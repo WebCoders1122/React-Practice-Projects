@@ -58,6 +58,7 @@ const Navbar = () => {
     { id: 7, text: "QR Code", url: "qr-code" },
     { id: 8, text: "Custom Tabs", url: "custom-tabs" },
     { id: 9, text: "Custom Pop Up", url: "custom-popup" },
+    { id: 10, text: "GitHub Profile Finder", url: "github-finder" },
   ];
   return (
     <nav
@@ -127,11 +128,9 @@ const Navbar = () => {
               {/* Dropdown menu */}
               <div
                 id='dropdown'
-                className={`z-10 ${
-                  expand ? null : "hidden"
-                } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
+                className={`hidden z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
                 <ul
-                  className={`py-2 text-sm text-gray-700 dark:text-gray-200"
+                  className={`py-2 text-sm text-gray-700 dark:text-gray-400
                   `}
                   aria-labelledby='dropdownDefaultButton'>
                   {dropDownItems
