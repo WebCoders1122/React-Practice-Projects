@@ -59,6 +59,7 @@ const Navbar = () => {
     { id: 8, text: "Custom Tabs", url: "custom-tabs" },
     { id: 9, text: "Custom Pop Up", url: "custom-popup" },
     { id: 10, text: "GitHub Profile Finder", url: "github-finder" },
+    { id: 11, text: "Search Autocomplete", url: "search-autocomplete" },
   ];
   return (
     <nav

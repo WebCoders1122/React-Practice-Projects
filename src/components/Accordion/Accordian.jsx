@@ -17,7 +17,7 @@ const Accordian = () => {
   };
 
   return (
-    <div className='container flex justify-center items-center flex-col gap-2 min-h-screen'>
+    <div className='container flex justify-center items-center flex-col gap-2'>
       <button
         onClick={() => {
           setMultiMode(!multiMode);

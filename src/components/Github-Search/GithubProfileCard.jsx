@@ -27,12 +27,7 @@ const GithubProfileCard = ({ user }) => {
           Followers: {followers}, &nbsp; Following: {following}
         </span>
         <span className='text-sm text-gray-500 dark:text-gray-400'>
-          Public Repositories:{" "}
-          <a
-            href='repos_url'
-            className='text-blue-400 underline font-semibold'>
-            {public_repos}
-          </a>
+          Public Repositories: {public_repos}
         </span>
         <div className='flex gap-4 m-2'>
           <span className=' text-gray-500 dark:text-gray-200'>
@@ -49,7 +44,7 @@ const GithubProfileCard = ({ user }) => {
             View Profile on Github
           </a>
           <a
-            href={repos_url}
+            href={`https://github.com/${login}?tab=repositories`}
             className='py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700'>
             View All Publice Repos
           </a>

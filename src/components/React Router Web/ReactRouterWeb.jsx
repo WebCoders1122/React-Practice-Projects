@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const ReactRouterWeb = () => {
   return (
-    <div>
+    <div className='relative'>
       React Router Web
       {/* <Navbar />
       <Footer /> */}

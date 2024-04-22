@@ -37,6 +37,7 @@ import Scroll_Indicator, {
 import CustomTabs from "./components/custom-tabs/CustomTabs.jsx";
 import CustomPopUp from "./components/custom-popup/CustomPopUp.jsx";
 import GithubSearch from "./components/Github-Search/GithubSearch.jsx";
+import AutoCompleteSearch from "./components/autocomplete-search/AutoCompleteSearch.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -114,6 +115,10 @@ function Index() {
         <Route
           path='github-finder'
           element={<GithubSearch />}
+        />
+        <Route
+          path='search-autocomplete'
+          element={<AutoCompleteSearch />}
         />
       </Route>
     )
