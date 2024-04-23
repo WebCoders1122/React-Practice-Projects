@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className='bg-white dark:bg-gray-900 ease-linear duration-200'>
+    <footer className='bg-white dark:bg-grey-900 ease-linear duration-200'>
       <div className='mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8'>
         {/* logo and links parent div */}
         <div className='md:flex md:justify-between'>
@@ -25,10 +25,10 @@ const Footer = () => {
           {/* all link are here with catogaries */}
           <div className='grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3'>
             <div>
-              <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>
+              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-white'>
                 Resources
               </h2>
-              <ul className='text-gray-500 dark:text-gray-400 font-medium'>
+              <ul className='text-grey-500 dark:text-grey-400 font-medium'>
                 <li className='mb-4'>
                   <a
                     href='https://flowbite.com/'
@@ -46,10 +46,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>
+              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-white'>
                 Follow us
               </h2>
-              <ul className='text-gray-500 dark:text-gray-400 font-medium'>
+              <ul className='text-grey-500 dark:text-grey-400 font-medium'>
                 <li className='mb-4'>
                   <a
                     href='https://github.com/themesberg/flowbite'
@@ -67,10 +67,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>
+              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-white'>
                 Legal
               </h2>
-              <ul className='text-gray-500 dark:text-gray-400 font-medium'>
+              <ul className='text-grey-500 dark:text-grey-400 font-medium'>
                 <li className='mb-4'>
                   <a
                     href='#'
@@ -89,12 +89,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className='my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8' />
+        <hr className='my-6 border-grey-200 sm:mx-auto dark:border-grey-700 lg:my-8' />
 
         {/* copyright and social icons parent */}
         <div className='sm:flex sm:items-center sm:justify-between'>
           {/* copyright text */}
-          <span className='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
+          <span className='text-sm text-grey-500 sm:text-center dark:text-grey-400'>
             © 2023{" "}
             <a
               href='/'
@@ -108,24 +108,24 @@ const Footer = () => {
           <div className='flex mt-4 sm:justify-center sm:mt-0'>
             <a
               href='#'
-              className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
+              className='text-grey-500 hover:text-grey-900 dark:hover:text-white'>
               <FaFacebook />
               <span className='sr-only'>Facebook page</span>
             </a>
             <a
               href='#'
-              className='text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5'>
+              className='text-grey-500 hover:text-grey-900 dark:hover:text-white ms-5'>
               <FaDiscord />
               <span className='sr-only'>Discord community</span>
             </a>
             <a
               href='#'
-              className='text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5'>
+              className='text-grey-500 hover:text-grey-900 dark:hover:text-white ms-5'>
               <FaXTwitter /> <span className='sr-only'>Twitter page</span>
             </a>
             <a
               href='#'
-              className='text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5'>
+              className='text-grey-500 hover:text-grey-900 dark:hover:text-white ms-5'>
               <FaGithub /> <span className='sr-only'>GitHub account</span>
             </a>
           </div>
@@ -134,8 +134,8 @@ const Footer = () => {
     </footer>
 
     // <>
-    //   <div className='bg-gray-100'>
-    //     <div className='max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto'>
+    //   <div className='bg-grey-100'>
+    //     <div className='max-w-screen-lg px-4 sm:px-6 text-grey-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto'>
     //       <div className='p-5'>
     //         <h3 className='font-bold text-xl text-indigo-600'>Web Coders</h3>
     //       </div>
@@ -212,8 +212,8 @@ const Footer = () => {
     //     </div>
     //   </div>
     //   {/* div for social and copyright */}
-    //   <div className='bg-gray-100 pt-2'>
-    //     <div className='flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col max-w-screen-lg items-center'>
+    //   <div className='bg-grey-100 pt-2'>
+    //     <div className='flex pb-5 px-3 m-auto pt-5 border-t text-grey-800 text-sm flex-col max-w-screen-lg items-center'>
     //       <div className='md:flex-auto md:flex-row-reverse mt-2 flex-row flex'>
     //         Social Icons here
     //       </div>

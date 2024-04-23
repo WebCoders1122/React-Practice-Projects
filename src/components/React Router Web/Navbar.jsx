@@ -64,7 +64,7 @@ const Navbar = () => {
   return (
     <nav
       className={
-        "bg-white border-gray-200 py-2.5 relative w-full dark:bg-gray-900 ease-linear duration-200"
+        "bg-white border-grey-200 py-2.5 relative w-full dark:bg-grey-900 ease-linear duration-200"
       }>
       {/* main div */}
       <div className='flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto '>
@@ -88,14 +88,14 @@ const Navbar = () => {
             (darkMode == null &&
               window.matchMedia("(prefers-color-scheme: dark)").matches) ? (
               <button
-                className='text-2xl bg-gray-200 dark:bg-gray-800 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 hover:dark:bg-gray-700 dark:text-white ease-linear duration-200'
+                className='text-2xl bg-grey-200 dark:bg-grey-800 rounded-md p-1 px-2 mx-2 hover:bg-grey-300 hover:dark:bg-grey-700 dark:text-white ease-linear duration-200'
                 onClick={() => dispatch(toggleMode(false))}>
                 <CiLight />
                 {/* <CiDark /> */}
               </button>
             ) : (
               <button
-                className='text-2xl bg-gray-200 dark:bg-gray-800 rounded-md p-1 px-2 mx-2 hover:bg-gray-300 hover:dark:bg-gray-700 dark:text-white ease-linear duration-200'
+                className='text-2xl bg-grey-200 dark:bg-grey-800 rounded-md p-1 px-2 mx-2 hover:bg-grey-300 hover:dark:bg-grey-700 dark:text-white ease-linear duration-200'
                 onClick={() => dispatch(toggleMode(true))}>
                 <CiDark />
                 {/* <CiLight /> */}
@@ -116,7 +116,7 @@ const Navbar = () => {
                 id='dropdownDefaultButton'
                 data-dropdown-toggle='dropdown'
                 onClick={() => setExpand(!expand)}
-                className={`flex text-white font-semibold bg-gradient-to-r from-violet-400 via-violet-600 to-violet-700 dark:from-gray-400 dark:via-gray-600 dark:to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-violet-400 dark:focus:ring-gray-400
+                className={`flex text-white font-semibold bg-gradient-to-r from-violet-400 via-violet-600 to-violet-700 dark:from-grey-400 dark:via-grey-600 dark:to-grey-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-violet-400 dark:focus:ring-grey-400
                 rounded-lg text-sm px-5 py-2 text-center me-2`}
                 type='button'>
                 Small Components &nbsp;
@@ -129,9 +129,9 @@ const Navbar = () => {
               {/* Dropdown menu */}
               <div
                 id='dropdown'
-                className={`hidden z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
+                className={`hidden z-10 bg-white divide-y divide-grey-100 rounded-lg shadow w-44 dark:bg-grey-700`}>
                 <ul
-                  className={`py-2 text-sm text-gray-700 dark:text-gray-400
+                  className={`py-2 text-sm text-grey-700 dark:text-grey-400
                   `}
                   aria-labelledby='dropdownDefaultButton'>
                   {dropDownItems
@@ -141,7 +141,7 @@ const Navbar = () => {
                             <Link
                               to={navItem.url}
                               onClick={() => setExpand(!expand)}
-                              className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white
+                              className={`block px-4 py-2 hover:bg-grey-100 dark:hover:bg-grey-600 dark:hover:text-white
                               `}>
                               {navItem.text}
                             </Link>
@@ -164,7 +164,7 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? `fixed lg:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-500 bg-white ease-in-out duration-500 z-20
+                ? `fixed lg:hidden left-0 top-0 w-[60%] h-full border-r border-r-grey-500 bg-white ease-in-out duration-500 z-20
                     dark:bg-[#000300]`
                 : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-20"
             }>
