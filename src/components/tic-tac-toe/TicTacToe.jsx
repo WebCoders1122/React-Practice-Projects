@@ -59,7 +59,7 @@ const TicTacToe = () => {
   return (
     <div className='bg-white flex flex-col items-center rounded-md overflow-hidden max-w-fit mx-auto dark:bg-grey-800 my-4'>
       <MyHeading>
-        Play <span className='dark:text-red-600'>Tic Toc Toe</span> Game
+        Play <span className='dark:text-red-600'>Tic Tac Toe</span> Game
       </MyHeading>
       <div className='flex gap-1 mb-1'>
         <Squares
