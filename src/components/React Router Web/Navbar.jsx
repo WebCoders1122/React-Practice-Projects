@@ -48,8 +48,9 @@ const Navbar = () => {
   // Array containing navigation items
   const navItems = [
     { id: 1, text: "Home", url: "/" },
-    { id: 3, text: "Image Slider", url: "image-slider" },
-    { id: 4, text: "Product Loader", url: "product-loader" },
+    { id: 2, text: "Image Slider", url: "image-slider" },
+    { id: 3, text: "Product Loader", url: "product-loader" },
+    { id: 4, text: "Tic Tac Toe", url: "tic-tac-toe" },
   ];
   const dropDownItems = [
     { id: 2, text: "Accordian", url: "accordian" },
@@ -102,10 +103,14 @@ const Navbar = () => {
               </button>
             )}
             <Link href='#'>
-              <MyButton text='Sign In' />
+              <MyButton
+                nav={true}
+                text='Sign In'
+              />
             </Link>
             <Link href='#'>
               <MyButton
+                nav={true}
                 text='Register'
                 color='dark'
               />
