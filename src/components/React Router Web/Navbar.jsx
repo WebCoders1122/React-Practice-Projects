@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <nav
       className={
-        "bg-white border-grey-200 py-2.5 relative w-full dark:bg-grey-900 ease-linear duration-200"
+        "bg-gray-50 border-b-2 border-gray-300 py-2.5 relative w-full dark:bg-grey-900 dark:border-red-600 ease-linear duration-200"
       }>
       {/* main div */}
       <div className='flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto '>

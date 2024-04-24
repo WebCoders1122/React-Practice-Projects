@@ -3,6 +3,7 @@ import Squares from "./Squares";
 import { useState } from "react";
 import MyButton from "../Reuseable Components/MyButton";
 import { useEffect } from "react";
+import MyHeading from "../Reuseable Components/MyHeading";
 
 const TicTacToe = () => {
   const [sqrArray, setSqrArray] = useState(new Array(9).fill(null));
@@ -57,9 +58,9 @@ const TicTacToe = () => {
 
   return (
     <div className='bg-white flex flex-col items-center rounded-md overflow-hidden max-w-fit mx-auto dark:bg-grey-800 my-4'>
-      <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-purple-700 md:text-5xl lg:text-5xl dark:text-white'>
-        Play Tic Toc Toe Game
-      </h1>
+      <MyHeading>
+        Play <span className='dark:text-red-600'>Tic Toc Toe</span> Game
+      </MyHeading>
       <div className='flex gap-1 mb-1'>
         <Squares
           onClick={() => handleClick(0)}
