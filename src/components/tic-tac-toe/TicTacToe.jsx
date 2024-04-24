@@ -2,11 +2,13 @@ import React from "react";
 import Squares from "./Squares";
 import { useState } from "react";
 import MyButton from "../Reuseable Components/MyButton";
+import { useEffect } from "react";
 
 const TicTacToe = () => {
   const [sqrArray, setSqrArray] = useState(new Array(9).fill(null));
   const [isXtrun, setIsXturn] = useState(true);
   const [winner, setWinner] = useState(null);
+  const [draw, setDraw] = useState(false);
 
   // winning patterns
   const winningPatterns = [
@@ -20,6 +22,19 @@ const TicTacToe = () => {
     [2, 4, 6],
   ];
 
+  useEffect(() => {
+    winningPatterns.map((ptrn) => {
+      if (
+        sqrArray[ptrn[0]] != null &&
+        sqrArray[ptrn[0]] == sqrArray[ptrn[1]] &&
+        sqrArray[ptrn[1]] == sqrArray[ptrn[2]]
+      ) {
+        setWinner(sqrArray[ptrn[0]]);
+      } else if (sqrArray.every((value) => value != null)) {
+        setDraw(true);
+      }
+    });
+  }, [winner, isXtrun]);
   //handle click
   const handleClick = (sqrIndex) => {
     if (winner) return;
@@ -28,16 +43,6 @@ const TicTacToe = () => {
     isXtrun ? (sqrArrayCopy[sqrIndex] = "X") : (sqrArrayCopy[sqrIndex] = "O");
     setIsXturn(!isXtrun);
     setSqrArray(sqrArrayCopy);
-    winningPatterns.map((ptrn) => {
-      if (
-        sqrArray[ptrn[0]] != null &&
-        sqrArray[ptrn[0]] == sqrArray[ptrn[1]] &&
-        sqrArray[ptrn[1]] == sqrArray[ptrn[2]]
-      ) {
-        setWinner(sqrArray[ptrn[0]]);
-      }
-    });
-    console.log(winner);
     // console.log(sqrIndex);
   };
 
@@ -47,49 +52,53 @@ const TicTacToe = () => {
     setSqrArray(new Array(9).fill(null));
     setWinner(null);
     setIsXturn(true);
+    setDraw(false);
   };
 
   return (
     <div className='bg-white flex flex-col items-center rounded-md overflow-hidden max-w-fit mx-auto dark:bg-grey-800 my-4'>
+      <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-purple-700 md:text-5xl lg:text-5xl dark:text-white'>
+        Play Tic Toc Toe Game
+      </h1>
       <div className='flex gap-1 mb-1'>
         <Squares
-          onCick={() => handleClick(0)}
+          onClick={() => handleClick(0)}
           value={sqrArray[0]}
         />
         <Squares
-          onCick={() => handleClick(1)}
+          onClick={() => handleClick(1)}
           value={sqrArray[1]}
         />
         <Squares
-          onCick={() => handleClick(2)}
+          onClick={() => handleClick(2)}
           value={sqrArray[2]}
         />
       </div>
       <div className='flex gap-1 mb-1'>
         <Squares
-          onCick={() => handleClick(3)}
+          onClick={() => handleClick(3)}
           value={sqrArray[3]}
         />
         <Squares
-          onCick={() => handleClick(4)}
+          onClick={() => handleClick(4)}
           value={sqrArray[4]}
         />
         <Squares
-          onCick={() => handleClick(5)}
+          onClick={() => handleClick(5)}
           value={sqrArray[5]}
         />
       </div>
       <div className='flex gap-1'>
         <Squares
-          onCick={() => handleClick(6)}
+          onClick={() => handleClick(6)}
           value={sqrArray[6]}
         />
         <Squares
-          onCick={() => handleClick(7)}
+          onClick={() => handleClick(7)}
           value={sqrArray[7]}
         />
         <Squares
-          onCick={() => handleClick(8)}
+          onClick={() => handleClick(8)}
           value={sqrArray[8]}
         />
       </div>
@@ -101,6 +110,10 @@ const TicTacToe = () => {
               {winner}
             </span>
             ". Click Button below to start new game...!!!
+          </h2>
+        ) : draw ? (
+          <h2 className='text-2xl dark:text-white'>
+            This is a draw. Click Button below to start new game...!!!
           </h2>
         ) : null}
         <MyButton
