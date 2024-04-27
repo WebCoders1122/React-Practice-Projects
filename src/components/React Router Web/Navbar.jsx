@@ -134,12 +134,18 @@ const Navbar = () => {
           {/* main nav menu */}
           <ul className='flex flex-col md:justify-center md:items-center justify-center font-medium p-4 md:p-0 mt-4 border border-grey-100 rounded-lg bg-grey-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-grey-800 md:dark:bg-grey-900 dark:border-grey-700'>
             <li>
-              <Link
-                href='#'
-                className='block py-2 px-3 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 md:dark:text-red-500 dark:bg-red-600 md:dark:bg-transparent'
+              <NavLink
+                to='/'
+                className={(isActive) => {
+                  return `block py-2 px-3  rounded hover:bg-grey-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 ${
+                    isActive.isActive
+                      ? "text-purple-700 dark:text-red-500"
+                      : "text-grey-900 dark:text-white"
+                  } md:dark:hover:text-red-500 dark:hover:bg-grey-700 dark:hover:text-white md:dark:hover:bg-transparent`;
+                }}
                 aria-current='page'>
                 Home
-              </Link>
+              </NavLink>
             </li>
 
             {/* 1st and 2nd drop down menus */}
@@ -223,25 +229,43 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link
-                href='#'
-                className='block py-2 px-3 text-grey-900 rounded hover:bg-grey-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:bg-grey-700 dark:hover:text-white md:dark:hover:bg-transparent'>
+              <NavLink
+                to='services'
+                className={(isActive) => {
+                  return `block py-2 px-3  rounded hover:bg-grey-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 ${
+                    isActive.isActive
+                      ? "text-purple-700 dark:text-red-500"
+                      : "text-grey-900 dark:text-white"
+                  } md:dark:hover:text-red-500 dark:hover:bg-grey-700 dark:hover:text-white md:dark:hover:bg-transparent`;
+                }}>
                 Services
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                href='#'
-                className='block py-2 px-3 text-grey-900 rounded hover:bg-grey-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:bg-grey-700 dark:hover:text-white md:dark:hover:bg-transparent'>
+              <NavLink
+                to='pricing'
+                className={(isActive) => {
+                  return `block py-2 px-3  rounded hover:bg-grey-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 ${
+                    isActive.isActive
+                      ? "text-purple-700 dark:text-red-500"
+                      : "text-grey-900 dark:text-white"
+                  } md:dark:hover:text-red-500 dark:hover:bg-grey-700 dark:hover:text-white md:dark:hover:bg-transparent`;
+                }}>
                 Pricing
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                href='#'
-                className='block py-2 px-3 text-grey-900 rounded hover:bg-grey-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:bg-grey-700 dark:hover:text-white md:dark:hover:bg-transparent'>
+              <NavLink
+                to='contact'
+                className={(isActive) => {
+                  return `block py-2 px-3  rounded hover:bg-grey-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 ${
+                    isActive.isActive
+                      ? "text-purple-700 dark:text-red-500"
+                      : "text-grey-900 dark:text-white"
+                  } md:dark:hover:text-red-500 dark:hover:bg-grey-700 dark:hover:text-white md:dark:hover:bg-transparent`;
+                }}>
                 Contact
-              </Link>
+              </NavLink>
             </li>
             <li>
               {/* dark mode toggler for large screens */}

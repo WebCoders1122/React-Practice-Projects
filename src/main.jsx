@@ -40,6 +40,10 @@ import GithubSearch from "./components/Github-Search/GithubSearch.jsx";
 import AutoCompleteSearch from "./components/autocomplete-search/AutoCompleteSearch.jsx";
 import TicTacToe from "./components/tic-tac-toe/TicTacToe.jsx";
 import FeatureFlag from "./components/feature-flag/FeatureFlag.jsx";
+import Services from "./pages/Services.jsx";
+import Contact from "./pages/Contact.jsx";
+import Pricing from "./pages/Pricing.jsx";
+import Home from "./pages/Home.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -66,6 +70,22 @@ function Index() {
       <Route
         path='/'
         element={<Layout />}>
+        <Route
+          path=''
+          element={<Home />}
+        />
+        <Route
+          path='services'
+          element={<Services />}
+        />
+        <Route
+          path='contact'
+          element={<Contact />}
+        />
+        <Route
+          path='pricing'
+          element={<Pricing />}
+        />
         <Route
           path='accordian'
           element={<Accordian />}
