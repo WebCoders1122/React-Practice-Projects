@@ -60,9 +60,10 @@ const Navbar = () => {
     { id: 10, text: "GitHub Profile Finder", url: "github-finder" },
     { id: 11, text: "Search Autocomplete", url: "search-autocomplete" },
     { id: 12, text: "Feature Flag", url: "feature-flag" },
+    { id: 13, text: "Custom Hooks", url: "custom-hooks" },
   ];
   return (
-    <nav className='bg-white border-grey-200 dark:bg-grey-900 dark:border-grey-700'>
+    <nav className='bg-white border-b border-b-grey-200 dark:border-b-red-600 dark:bg-grey-900'>
       {/* main navbar div */}
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         {/*logo*/}

@@ -24,8 +24,9 @@ const Footer = () => {
 
           {/* all link are here with catogaries */}
           <div className='grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3'>
+            {/* resources */}
             <div>
-              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-white'>
+              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-red-500'>
                 Resources
               </h2>
               <ul className='text-grey-500 dark:text-grey-400 font-medium'>
@@ -45,8 +46,9 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+            {/* follow us */}
             <div>
-              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-white'>
+              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-red-500'>
                 Follow us
               </h2>
               <ul className='text-grey-500 dark:text-grey-400 font-medium'>
@@ -66,8 +68,9 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+            {/* legel */}
             <div>
-              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-white'>
+              <h2 className='mb-6 text-sm font-semibold text-grey-900 uppercase dark:text-red-500'>
                 Legal
               </h2>
               <ul className='text-grey-500 dark:text-grey-400 font-medium'>

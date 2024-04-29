@@ -44,6 +44,7 @@ import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Home from "./pages/Home.jsx";
+import CustomHooks from "./components/custom-hooks/CustomHooks.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -149,6 +150,10 @@ function Index() {
         <Route
           path='feature-flag'
           element={<FeatureFlag />}
+        />
+        <Route
+          path='custom-hooks'
+          element={<CustomHooks />}
         />
       </Route>
     )
