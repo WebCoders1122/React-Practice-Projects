@@ -10,6 +10,11 @@ const CustomHooks = () => {
   const modalRef = useRef();
   useHideModal(modalRef, () => setShowModal(false));
   // console.log(loading, data, error);
+
+  //handle Click
+  const handleClick = () => {
+    setShowModal(true);
+  };
   return (
     <div className='flex flex-col items-center gap-3 my-4'>
       {/* useFetch Hook */}
@@ -44,7 +49,7 @@ const CustomHooks = () => {
         <h2 className='text-xl font-bold text-purple-700 sm:text-3xl text-center w-full pb-3 shadow-md dark:text-red-500'>
           useHideModal Hook{" "}
         </h2>
-        {showModal ? (
+        {showModal == true ? (
           <>
             {/* modal */}
             <div
@@ -71,10 +76,7 @@ const CustomHooks = () => {
             </div>
           </>
         ) : (
-          <MyButton
-            onClick={() => setShowModal(true)}
-            text={"Click to Show"}
-          />
+          <MyButton onClick={handleClick}>Click To Show</MyButton>
         )}
       </div>
     </div>

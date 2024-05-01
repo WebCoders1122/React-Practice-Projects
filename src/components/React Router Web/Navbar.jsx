@@ -61,6 +61,7 @@ const Navbar = () => {
     { id: 11, text: "Search Autocomplete", url: "search-autocomplete" },
     { id: 12, text: "Feature Flag", url: "feature-flag" },
     { id: 13, text: "Custom Hooks", url: "custom-hooks" },
+    { id: 14, text: "Scroll to Top", url: "scroll-top" },
   ];
   return (
     <nav className='bg-white border-b border-b-grey-200 dark:border-b-red-600 dark:bg-grey-900'>

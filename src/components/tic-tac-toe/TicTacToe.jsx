@@ -117,10 +117,7 @@ const TicTacToe = () => {
             This is a draw. Click Button below to start new game...!!!
           </h2>
         ) : null}
-        <MyButton
-          text='Restart Game'
-          onClick={restartGame}
-        />
+        <MyButton onClick={restartGame}>Restart Game</MyButton>
       </div>
     </div>
   );

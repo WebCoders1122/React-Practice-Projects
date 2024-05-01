@@ -7,7 +7,7 @@ const CustomPopUp = () => {
   const [showPopup, setShowPopup] = useState(false);
   return (
     <div className='p-5 flex items-center justify-center flex-col gap-2 '>
-      <MyButton onClick={() => setShowPopup(!showPopup)} />
+      <MyButton onClick={() => setShowPopup(!showPopup)}>Show Popup</MyButton>
       {showPopup ? <PopUp /> : null}
     </div>
   );
