@@ -48,6 +48,7 @@ import CustomHooks from "./components/custom-hooks/CustomHooks.jsx";
 import ScrollToTopBottom, {
   ScrollToTopBottom_loader,
 } from "./components/scroll to top bottom section/ScrollToTopBottom.jsx";
+import TestPage from "./components/TestPage.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -162,6 +163,10 @@ function Index() {
           loader={ScrollToTopBottom_loader}
           path='scroll-top'
           element={<ScrollToTopBottom />}
+        />
+        <Route
+          path='test-page'
+          element={<TestPage />}
         />
       </Route>
     )
