@@ -49,7 +49,8 @@ const Navbar = () => {
     { id: 1, text: "Test Page", url: "test-page" },
     { id: 2, text: "Image Slider", url: "image-slider" },
     { id: 3, text: "Product Loader", url: "product-loader" },
-    { id: 4, text: "Tic Tac Toe", url: "tic-tac-toe" },
+    { id: 4, text: "Weather App", url: "weather-app" },
+    { id: 5, text: "Tic Tac Toe", url: "tic-tac-toe" },
   ];
   const dropDown2 = [
     { id: 2, text: "Accordian", url: "accordian" },

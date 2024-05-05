@@ -49,6 +49,7 @@ import ScrollToTopBottom, {
   ScrollToTopBottom_loader,
 } from "./components/scroll to top bottom section/ScrollToTopBottom.jsx";
 import TestPage from "./components/TestPage.jsx";
+import WeatherApp from "./components/Weather App/WeatherApp.jsx";
 //method 1
 // const router = createBrowserRouter([
 //   {
@@ -167,6 +168,10 @@ function Index() {
         <Route
           path='test-page'
           element={<TestPage />}
+        />
+        <Route
+          path='weather-app'
+          element={<WeatherApp />}
         />
       </Route>
     )
