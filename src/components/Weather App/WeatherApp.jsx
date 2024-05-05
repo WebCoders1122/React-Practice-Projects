@@ -3,6 +3,7 @@ import SearchWithButton from "../Reuseable Components/SearchWithButton";
 import { Container } from "../Reuseable Components/Container";
 import CardwithLogo from "../Reuseable Components/CardwithLogo";
 import WeatherCard2 from "./WeatherCard2";
+import WeatherCard3 from "./WeatherCard3";
 
 const WeatherApp = () => {
   return (
@@ -17,21 +18,31 @@ const WeatherApp = () => {
           <SearchWithButton>Enter Your City Here...</SearchWithButton>
         </div>
       </div>
-      {/* weather iformation */}
-      <Container>
-        <div className='flex'>
-          {/* weather info1 left */}
-          <CardwithLogo
-            day={"Monday"}
-            date={"April 19, 2024"}
-            temp={"18C"}
-            condition={"Patially Cloudy"}
-            logo={null}
-          />
-          {/* weather info2 right*/}
-          <WeatherCard2 />
-        </div>
-      </Container>
+      {/* 1st row : weather information, today and tomorrow */}
+      <div className='flex gap-10 justify-between'>
+        {/* weather iformation */}
+        <Container>
+          <div className='flex'>
+            {/* weather info1 left */}
+            <CardwithLogo
+              day={"Monday"}
+              date={"April 19, 2024"}
+              temp={"18C"}
+              condition={"Patially Cloudy"}
+              logo={null}
+            />
+            {/* weather info2 right*/}
+            <WeatherCard2 />
+          </div>
+        </Container>
+        {/* today*/}
+        <Container>
+          <WeatherCard3 />
+        </Container>
+        <Container>
+          <WeatherCard3 />
+        </Container>
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 
 const CardwithLogo = ({ day, date, temp, condition }) => {
   return (
-    <div className=' flex flex-col py-2 px-6 max-w-sm'>
+    <div className=' flex flex-col py-2 px-10 max-w-sm'>
       {/* day and date */}
       <div className='mt-2'>
         <h5 className='mb-2 text-purple-500 text-5xl font-semibold tracking-tight  dark:text-red-500'>
