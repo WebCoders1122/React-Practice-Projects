@@ -5,6 +5,7 @@ import CardwithLogo from "../Reuseable Components/CardwithLogo";
 import WeatherCard2 from "./WeatherCard2";
 import WeatherCard3 from "./WeatherCard3";
 import WeatherCard4 from "./WeatherCard4";
+import WeatherCard5 from "./WeatherCard5";
 
 const WeatherApp = () => {
   return (
@@ -46,8 +47,31 @@ const WeatherApp = () => {
         </Container>
       </div>
       {/* 2nd row: hourly Forecast */}
-      <div>
-        <Container>abc</Container>
+      <div className='flex justify-between'>
+        <Container>
+          <WeatherCard5 />
+        </Container>
+        <Container>
+          <WeatherCard5 />
+        </Container>
+        <Container>
+          <WeatherCard5 />
+        </Container>
+        <Container>
+          <WeatherCard5 />
+        </Container>
+        <Container>
+          <WeatherCard5 />
+        </Container>
+        <Container>
+          <WeatherCard5 />
+        </Container>
+        <Container>
+          <WeatherCard5 />
+        </Container>
+        <Container>
+          <WeatherCard5 />
+        </Container>
       </div>
       {/* 3rd row: weekly Forecast */}
       <div className='flex justify-between'>

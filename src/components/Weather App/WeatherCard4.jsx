@@ -6,7 +6,7 @@ const WeatherCard4 = () => {
     <div className='sunrise flex gap-5 items-center py-5 px-6 dark:text-grey-300'>
       <FiSunrise size={80} />
       <div className='flex flex-col justify-between items-center'>
-        <p className='text-xl text-center font-semibold text-purple-700 dark:text-red-500'>
+        <p className='text-2xl text-center font-semibold text-purple-700 dark:text-red-500'>
           Sunday
         </p>
         <p className='text-center text-sm'>April 21, 2024</p>
