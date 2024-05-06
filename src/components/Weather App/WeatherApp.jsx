@@ -4,13 +4,14 @@ import { Container } from "../Reuseable Components/Container";
 import CardwithLogo from "../Reuseable Components/CardwithLogo";
 import WeatherCard2 from "./WeatherCard2";
 import WeatherCard3 from "./WeatherCard3";
+import WeatherCard4 from "./WeatherCard4";
 
 const WeatherApp = () => {
   return (
     // main container
     <div className='flex flex-col gap-3 rounded-2xl overflow-hidden m-5 mx-auto max-w-screen-xl p-2 bg-white dark:bg-grey-700'>
       {/* top nav */}
-      <div className='topNav flex items-center justify-between bg-gray-100 dark:bg-grey-900 rounded-xl p-1 w-full'>
+      <div className='topNav flex items-center justify-between bg-gray-100 dark:bg-grey-900 shadow-md rounded-xl p-1 w-full'>
         <h2 className='font-semibold text-2xl pl-5 text-purple-700 dark:text-red-500 '>
           Weather App
         </h2>
@@ -19,7 +20,7 @@ const WeatherApp = () => {
         </div>
       </div>
       {/* 1st row : weather information, today and tomorrow */}
-      <div className='flex gap-10 justify-between'>
+      <div className='flex justify-between'>
         {/* weather iformation */}
         <Container>
           <div className='flex'>
@@ -39,8 +40,31 @@ const WeatherApp = () => {
         <Container>
           <WeatherCard3 />
         </Container>
+        {/* tomorrow*/}
         <Container>
           <WeatherCard3 />
+        </Container>
+      </div>
+      {/* 2nd row: hourly Forecast */}
+      <div>
+        <Container>abc</Container>
+      </div>
+      {/* 3rd row: weekly Forecast */}
+      <div className='flex justify-between'>
+        <Container>
+          <WeatherCard4 />
+        </Container>
+        <Container>
+          <WeatherCard4 />
+        </Container>
+        <Container>
+          <WeatherCard4 />
+        </Container>
+        <Container>
+          <WeatherCard4 />
+        </Container>
+        <Container>
+          <WeatherCard4 />
         </Container>
       </div>
     </div>

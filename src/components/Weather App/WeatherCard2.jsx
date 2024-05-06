@@ -3,7 +3,7 @@ import { FiSunrise, FiSunset } from "react-icons/fi";
 
 const WeatherCard2 = () => {
   return (
-    <div className=' flex flex-col justify-between py-2 px-6 max-w-sm dark:text-white'>
+    <div className=' flex flex-col justify-between py-2 px-6 pr-10 max-w-sm dark:text-white'>
       {/* Parameters */}
       <div>
         <div className='flex gap-5 w-full justify-between'>
