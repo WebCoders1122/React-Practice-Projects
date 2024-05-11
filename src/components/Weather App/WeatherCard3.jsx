@@ -1,37 +1,45 @@
 import React from "react";
-import { TiWeatherPartlySunny } from "react-icons/ti";
+import { useSelector } from "react-redux";
 
-const WeatherCard3 = () => {
+const WeatherCard3 = ({ day, data }) => {
   return (
-    <div className=' flex flex-col py-2 px-9 w-fit'>
+    <div className=' flex flex-col items-center py-2 px-8 w-fit'>
       {/* day and date */}
-      <h5 className='mb-2 text-purple-500 text-4xl text-center font-semibold tracking-tight  dark:text-red-500'>
-        Today
+      <h5 className='mb-2 text-purple-500 text-4xl text-center font-semibold tracking-tight  dark:text-red-500 uppercase'>
+        {day}
       </h5>
+      <p className='dark:text-grey-200 text-xl uppercase'>{data.weatherDesc}</p>
+      <img
+        className='-m-10 w-[140px] h-[140px]'
+        src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
+        alt=''
+      />
       {/* conditions and logo */}
-      <div className='flex items-end justify-between gap-14'>
-        <div className='mb-3'>
-          <h5 className=' text-purple-500 text-4xl font-semibold tracking-tight  dark:text-red-500'>
-            22 C
+      <div>
+        <div className='flex items-end justify-between gap-14'>
+          <h5 className=' text-purple-500 text-2xl font-semibold tracking-tight  dark:text-red-500'>
+            Max Temp:
           </h5>
-          <p className='dark:text-grey-200 text-xl'>Patrially Cloudy</p>
+          <span className='text-lg dark:text-grey-300 font-semibold'>
+            {data.maxTemp} &deg;C
+          </span>
         </div>
-        <TiWeatherPartlySunny
-          className='dark:text-grey-50'
-          size={70}
-        />
-      </div>
-      <div className='flex items-end justify-between gap-8'>
-        <div className='mb-3'>
-          <h5 className=' text-purple-500 text-4xl font-semibold tracking-tight  dark:text-red-500'>
-            22 C
+        <div className='flex items-end justify-between'>
+          <h5 className=' text-purple-500 text-2xl font-semibold tracking-tight  dark:text-red-500'>
+            Min Temp:
           </h5>
-          <p className='dark:text-grey-200 text-xl'>Patrially Cloudy</p>
+          <span className='text-lg dark:text-grey-300 font-semibold'>
+            {data.minTemp} &deg;C
+          </span>
         </div>
-        <TiWeatherPartlySunny
-          className='dark:text-grey-50'
-          size={70}
-        />
+        <div className='flex items-end justify-between gap-8'>
+          <h5 className=' text-purple-500 text-2xl font-semibold tracking-tight  dark:text-red-500'>
+            Feels Like:
+          </h5>
+          <span className='text-lg dark:text-grey-300 font-semibold'>
+            {data.feelsLike} &deg;C
+          </span>
+        </div>
       </div>
     </div>
   );

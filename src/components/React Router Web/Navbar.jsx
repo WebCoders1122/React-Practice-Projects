@@ -88,14 +88,14 @@ const Navbar = () => {
             (darkMode == null &&
               window.matchMedia("(prefers-color-scheme: dark)").matches) ? (
               <button
-                className='text-2xl font-bold bg-grey-200 dark:bg-grey-800 rounded-md p-2 w-10 h-10 hover:bg-grey-300 dark:hover:bg-red-700 dark:focus:ring-grey-600 dark:active:focus:ring-red-400 dark:text-white ease-linear duration-200'
+                className='text-2xl font-bold shadow bg-grey-200 dark:bg-grey-800 rounded-md p-2 w-10 h-10 hover:bg-grey-300 dark:hover:bg-red-700 dark:focus:ring-grey-600 dark:active:focus:ring-red-400 dark:text-white ease-linear duration-200'
                 onClick={() => dispatch(toggleMode(false))}>
                 <CiLight />
                 {/* <CiDark /> */}
               </button>
             ) : (
               <button
-                className='text-2xl hover:bg-grey-100 rounded-md p-2 w-10 h-10hover:dark:bg-grey-700 dark:text-white ease-linear duration-200'
+                className='text-2xl shadow bg-grey-50 hover:bg-grey-100 rounded-md p-2 w-10 h-10 hover:dark:bg-grey-700 dark:text-white ease-linear duration-200'
                 onClick={() => dispatch(toggleMode(true))}>
                 <CiDark />
                 {/* <CiLight /> */}
@@ -279,14 +279,14 @@ const Navbar = () => {
                 (darkMode == null &&
                   window.matchMedia("(prefers-color-scheme: dark)").matches) ? (
                   <button
-                    className='text-2xl font-bold bg-grey-200 dark:bg-grey-800 rounded-md p-2 w-10 h-10 hover:bg-grey-300 dark:hover:bg-red-700 dark:focus:ring-grey-600 dark:active:focus:ring-red-400 dark:text-white ease-linear duration-200'
+                    className='text-2xl font-bold shadow bg-grey-200 dark:bg-grey-800 rounded-md p-2 w-10 h-10 hover:bg-grey-300 dark:hover:bg-red-700 dark:focus:ring-grey-600 dark:active:focus:ring-red-400 dark:text-white ease-linear duration-200'
                     onClick={() => dispatch(toggleMode(false))}>
                     <CiLight />
                     {/* <CiDark /> */}
                   </button>
                 ) : (
                   <button
-                    className='text-2xl hover:bg-grey-100 rounded-md p-2 w-10 h-10hover:dark:bg-grey-700 dark:text-white ease-linear duration-200'
+                    className='text-2xl bg-grey-50 shadow hover:bg-grey-100 rounded-md p-2 w-10 h-10hover:dark:bg-grey-700 dark:text-white ease-linear duration-200'
                     onClick={() => dispatch(toggleMode(true))}>
                     <CiDark />
                     {/* <CiLight /> */}
