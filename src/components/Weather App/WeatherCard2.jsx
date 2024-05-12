@@ -11,7 +11,7 @@ const WeatherCard2 = () => {
       <div>
         <div className='flex gap-5 w-full justify-between'>
           <p>Wind Speed</p>
-          <span>{windSpeed * 3.6} Km/h</span>
+          <span>{(windSpeed * 3.6).toFixed(2)} Km/h</span>
         </div>
         <div className='flex gap-5 w-full justify-between'>
           <p>Humidity</p>

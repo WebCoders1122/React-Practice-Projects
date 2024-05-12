@@ -1,17 +1,18 @@
 import React from "react";
-import { FiSunrise } from "react-icons/fi";
 
-const WeatherCard5 = () => {
+const WeatherCard5 = ({ forecast }) => {
   return (
-    <div className='sunrise flex flex-col justify-between items-center py-2 px-7 dark:text-grey-300'>
-      <FiSunrise
-        className='mt-1'
-        size={70}
-      />
+    <div className='sunrise flex flex-col justify-between items-center py-2 px-4 dark:text-grey-300'>
       <p className='text-xl mt-2 text-center font-semibold text-purple-700 dark:text-red-500'>
-        07:00 AM
+        {forecast.time}
       </p>
-      <p className='-mt-1'>15 C</p>
+      <img
+        className=' h-[120px] -my-4 drop-shadow-md'
+        src={`https://openweathermap.org/img/wn/${forecast.icon}@4x.png`}
+      />
+      <p className='-mt-1 font-semibold text-lg'>
+        {forecast.temperature} &deg;C
+      </p>
     </div>
   );
 };
