@@ -11,7 +11,7 @@ const WeatherCard3 = ({ day, data }) => {
       </h5>
       <p className='dark:text-grey-200 text-xl uppercase'>{weatherDesc}</p>
       <img
-        className='-m-8 w-[140px] h-[140px]'
+        className='-m-8 w-[140px] h-[140px] invert dark:invert-0 '
         src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
         alt=''
       />

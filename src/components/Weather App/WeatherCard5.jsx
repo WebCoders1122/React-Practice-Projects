@@ -7,7 +7,7 @@ const WeatherCard5 = ({ forecast }) => {
         {forecast.time}
       </p>
       <img
-        className=' h-[120px] -my-4 drop-shadow-md'
+        className=' h-[120px] -my-4 drop-shadow-md invert dark:invert-0 '
         src={`https://openweathermap.org/img/wn/${forecast.icon}@4x.png`}
       />
       <p className='-mt-1 font-semibold text-lg'>

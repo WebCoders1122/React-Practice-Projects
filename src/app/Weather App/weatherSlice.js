@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 //api imports
 import { getWeather, getWeatherForecast } from "./weatherAPI";
 
-//misc veriables
+//misc veriables and functions
 const weekdays = [
   "Sunday",
   "Monday",
@@ -13,6 +13,12 @@ const weekdays = [
   "Saturday",
 ];
 
+function fahrenheitToCelsius(val) {
+  return ((val - 32) / 1.8).toFixed(2);
+}
+function celsiusToFahrenheit(val) {
+  return (val * 1.8 + 32).toFixed(2);
+}
 //initial state
 const initialState = {
   cityWeatherData: {
@@ -56,6 +62,7 @@ const initialState = {
   ],
   forecastError: null,
   forecastLoading: false,
+  units: "C",
 };
 
 export const getWeatherAsync = createAsyncThunk(
@@ -84,6 +91,53 @@ const weatherSlice = createSlice({
   reducers: {
     setNewSearch: (state, action) => {
       state.newSearch = action.payload;
+    },
+    setUnits: (state, action) => {
+      //cetcius to fahrehheit  and vice versa
+      if (action.payload == "F") {
+        state.cityWeatherData.temperature = celsiusToFahrenheit(
+          state.cityWeatherData.temperature
+        );
+        state.cityWeatherData.feelsLike = celsiusToFahrenheit(
+          state.cityWeatherData.feelsLike
+        );
+        state.cityWeatherData.maxTemp = celsiusToFahrenheit(
+          state.cityWeatherData.maxTemp
+        );
+        state.cityWeatherData.minTemp = celsiusToFahrenheit(
+          state.cityWeatherData.minTemp
+        );
+        state.dailyForecast.map((forecast) => {
+          forecast.minTemp = celsiusToFahrenheit(forecast.minTemp);
+          forecast.maxTemp = celsiusToFahrenheit(forecast.maxTemp);
+        });
+        state.hourlyForecast.map(
+          (forecast) =>
+            (forecast.temperature = celsiusToFahrenheit(forecast.temperature))
+        );
+      } else if (action.payload == "C") {
+        state.cityWeatherData.temperature = fahrenheitToCelsius(
+          state.cityWeatherData.temperature
+        );
+        state.cityWeatherData.feelsLike = fahrenheitToCelsius(
+          state.cityWeatherData.feelsLike
+        );
+        state.cityWeatherData.maxTemp = fahrenheitToCelsius(
+          state.cityWeatherData.maxTemp
+        );
+        state.cityWeatherData.minTemp = fahrenheitToCelsius(
+          state.cityWeatherData.minTemp
+        );
+        state.dailyForecast.map((forecast) => {
+          forecast.minTemp = fahrenheitToCelsius(forecast.minTemp);
+          forecast.maxTemp = fahrenheitToCelsius(forecast.maxTemp);
+        });
+        state.hourlyForecast.map(
+          (forecast) =>
+            (forecast.temperature = fahrenheitToCelsius(forecast.temperature))
+        );
+      }
+      // state.celcius = action.payload;
     },
     // handleInputValue: (state, action) => {
     //   state.inputVlaue = action.payload;
@@ -176,5 +230,5 @@ const weatherSlice = createSlice({
       });
   },
 });
-export const { setNewSearch } = weatherSlice.actions;
+export const { setNewSearch, setUnits } = weatherSlice.actions;
 export default weatherSlice.reducer;

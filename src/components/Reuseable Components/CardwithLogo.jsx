@@ -23,7 +23,7 @@ const CardwithLogo = () => {
           <p className='dark:text-grey-200 uppercase'>{weatherDesc}</p>
         </div>
         <img
-          className='h-[200px] w-[200px] -m-8'
+          className='h-[200px] w-[200px] -m-8 invert dark:invert-0 '
           src={`https://openweathermap.org/img/wn/${icon}@4x.png`}
           alt='Weather_icon'
         />

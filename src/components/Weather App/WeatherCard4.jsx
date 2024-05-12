@@ -4,7 +4,7 @@ const WeatherCard4 = ({ forecast }) => {
   return (
     <div className='sunrise flex gap-6 items-center py-4 px-7 dark:text-grey-300'>
       <img
-        className=' h-[120px] -mx-7 -my-4 drop-shadow-md'
+        className=' h-[120px] -mx-7 -my-4 invert dark:invert-0 drop-shadow-md'
         src={`https://openweathermap.org/img/wn/${forecast.icon}@4x.png`}
       />
 

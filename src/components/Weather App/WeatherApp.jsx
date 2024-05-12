@@ -14,6 +14,7 @@ import {
   getWeatherForecaseAsync,
   setNewSearch,
 } from "../../app/Weather App/weatherSlice";
+import ToggleWithText from "../Reuseable Components/ToggleWithText";
 
 const WeatherApp = () => {
   const weather = useSelector((state) => state.weather);
@@ -34,7 +35,8 @@ const WeatherApp = () => {
       {/* top nav */}
       <div className='topNav flex items-center justify-between bg-gray-100 dark:bg-grey-900 shadow-md rounded-xl pl-5 p-1 w-full'>
         <MyHeading2>React JS Weather App</MyHeading2>
-        <div>
+        <div className='flex items-center h-full gap-2'>
+          <ToggleWithText />
           <SearchWithButton
             dispatch={dispatch}
             setNewSearch={setNewSearch}>
