@@ -15,6 +15,7 @@ import {
   setNewSearch,
 } from "../../app/Weather App/weatherSlice";
 import ToggleWithText from "../Reuseable Components/ToggleWithText";
+import Loading from "../Reuseable Components/Loading";
 
 const WeatherApp = () => {
   const weather = useSelector((state) => state.weather);
@@ -45,26 +46,31 @@ const WeatherApp = () => {
         </div>
       </div>
       {/* 1st row : weather information, today and tomorrow */}
-      <div className='flex justify-between'>
+      <div className='flex justify-between gap-3'>
         {/* weather iformation */}
-        <Container>
-          <div className='flex'>
-            {/* weather info1 left */}
-            <CardwithLogo
-              day={"Monday"}
-              date={"April 19, 2024"}
-              temp={"18C"}
-              condition={"Patially Cloudy"}
-              logo={null}
-            />
-            {/* weather info2 right*/}
-            <WeatherCard2 />
-          </div>
-        </Container>
+        {weather.loading ? (
+          <Loading />
+        ) : (
+          <Container>
+            <div className='flex grow'>
+              {/* weather info1 left */}
+              <CardwithLogo
+                day={"Monday"}
+                date={"April 19, 2024"}
+                temp={"18C"}
+                condition={"Patially Cloudy"}
+                logo={null}
+              />
+              {/* weather info2 right*/}
+              <WeatherCard2 />
+            </div>
+          </Container>
+        )}
+
         {/* today*/}
         <Container>
           {weather.forecastLoading ? (
-            <div>loading...</div>
+            <Loading />
           ) : (
             <WeatherCard3
               day='today'
@@ -79,7 +85,7 @@ const WeatherApp = () => {
         {/* tomorrow*/}
         <Container>
           {weather.forecastLoading ? (
-            <div>loading...</div>
+            <Loading />
           ) : (
             <WeatherCard3
               day='Tomorrow'
@@ -98,15 +104,19 @@ const WeatherApp = () => {
         <MyHeading2>Hourly Forecast</MyHeading2>
       </div>
       <div className='flex justify-between'>
-        {weather && weather.hourlyForecast && weather.hourlyForecast.length
-          ? weather.hourlyForecast.map((forecast) => {
-              return (
-                <Container key={forecast.id}>
-                  <WeatherCard5 forecast={forecast} />
-                </Container>
-              );
-            })
-          : null}
+        {weather.forecastLoading ? (
+          <Loading />
+        ) : weather &&
+          weather.hourlyForecast &&
+          weather.hourlyForecast.length ? (
+          weather.hourlyForecast.map((forecast) => {
+            return (
+              <Container key={forecast.id}>
+                <WeatherCard5 forecast={forecast} />
+              </Container>
+            );
+          })
+        ) : null}
       </div>
 
       {/* 3rd row: weekly Forecast */}
@@ -114,15 +124,17 @@ const WeatherApp = () => {
         <MyHeading2>Daily Forecast</MyHeading2>
       </div>
       <div className='flex justify-between'>
-        {weather && weather.dailyForecast && weather.dailyForecast.length
-          ? weather.dailyForecast.map((forecast) => {
-              return (
-                <Container key={forecast.id}>
-                  <WeatherCard4 forecast={forecast} />
-                </Container>
-              );
-            })
-          : null}
+        {weather.forecastLoading ? (
+          <Loading />
+        ) : weather && weather.dailyForecast && weather.dailyForecast.length ? (
+          weather.dailyForecast.map((forecast) => {
+            return (
+              <Container key={forecast.id}>
+                <WeatherCard4 forecast={forecast} />
+              </Container>
+            );
+          })
+        ) : null}
       </div>
     </div>
   );
